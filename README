@@ -1,1 +1,17 @@
 A script to create/delete apache virtualhosts in ~/public_html
+
+Right now this script doesn't include a usage section, so here is how you use it.
+
+This script requires sudo priv.
+
+# This will create ~/public_html/test.local structure as 775 to $USER:www-data
+# and create /etc/apache2/sites-available/test.local with http and https hosts.
+# Then the site will be enabled and the webserver rebooted.
+./vhost.sh add test
+
+# THis will delete the apache config file and 
+# disable the site and restart the webserver.
+./vhost.sh del test
+
+# Future feature, will fix permissions 
+./vhost perm test
